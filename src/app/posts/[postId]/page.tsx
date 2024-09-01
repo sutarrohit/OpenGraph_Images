@@ -16,28 +16,27 @@ export async function generateStaticParams() {
   return posts.map(({ id }) => id);
 }
 
-// Manually deduplicate requests if not using fetch
-// const getPost = cache(async (postId: string) => {
-//   const post = await prisma.post.findUnique(postId);
-//   return post;
-// })
-
 export async function generateMetadata({
   params: { postId },
 }: BlogPostPageProps): Promise<Metadata> {
   const response = await fetch(`https://dummyjson.com/posts/${postId}`);
-  const post: BlogPost = await response.json();
+  const post = await response.json();
 
   return {
     title: post.title,
     description: post.body,
-    // openGraph: {
-    //   images: [
-    //     {
-    //       url: post.imageUrl
-    //     }
-    //   ]
-    // }
+    openGraph: {
+      title: post.title,
+      description: post.body,
+      images: [
+        {
+          url: `/generatePostsImage/${postId}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: post.title,
+        },
+      ],
+    },
   };
 }
 

@@ -6,16 +6,16 @@ import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export const metadata: Metadata = {
-  title: {
-    default: "My Awesome Blog",
-    template: "%s - My Awesome Blog",
-  },
-  description: "Come and read my awesome articles!",
-  twitter: {
-    card: "summary_large_image",
-  },
-};
+// export const metadata: Metadata = {
+//   title: {
+//     default: "My Awesome Blog",
+//     template: "%s - My Awesome Blog",
+//   },
+//   description: "Come and read my awesome articles!",
+//   twitter: {
+//     card: "summary_large_image",
+//   },
+// };
 
 export default function RootLayout({
   children,
