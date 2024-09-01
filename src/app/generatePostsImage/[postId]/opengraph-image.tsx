@@ -45,11 +45,11 @@ export default async function Image({ params }: OpenGraphImageProps) {
         />
         <p
           style={{
-            position: "relative",
+            position: "absolute",
             top: "50%",
             left: "50%",
             transform: "translate(-50%, -50%)", // Center the text
-            color: "white", // Red text color
+            color: "red", // Red text color
             margin: 0, // Remove default margin
             fontWeight: "bold", // Bold text
             textShadow: "2px 2px 4px rgba(0, 0, 0, 0.7)", // Text shadow for readability

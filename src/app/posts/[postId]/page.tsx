@@ -30,7 +30,7 @@ export async function generateMetadata({
       description: post.body,
       images: [
         {
-          url: `/generatePostsImage/${postId}/opengraph-image`,
+          url: `https://og-meta-images.vercel.app/generatePostsImage/${postId}/opengraph-image`,
           width: 1200,
           height: 630,
           alt: post.title,
